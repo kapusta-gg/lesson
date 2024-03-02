@@ -42,6 +42,7 @@ def create_job():
         end_date=request.json["end_date"],
         is_finished=request.json["is_finished"]
     )
+
     db_sess.add(job)
     db_sess.commit()
     return jsonify({"ok": "Everything is ok"})
