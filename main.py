@@ -1,6 +1,8 @@
 from flask import Flask, make_response, jsonify
 from data import db_session, news_api
 
+
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
@@ -17,7 +19,7 @@ def not_found(_):
 
 def main():
     db_session.global_init("db/blogs.db")
-    app.register_blueprint(news_api.blueprint)
+    app.register_blueprint(news_api.blueprint) #Передаем модуль
     app.run()
 
 
